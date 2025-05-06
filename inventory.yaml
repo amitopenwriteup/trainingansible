@@ -1,0 +1,9 @@
+webservers:
+  hosts:
+    host1:
+      ansible_host: localhost
+      ansible_connection: local
+    host2:
+      ansible_host: 10.0.16.2
+      ansible_connection: ssh
+      ansible_user: student
