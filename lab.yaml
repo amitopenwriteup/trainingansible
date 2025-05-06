@@ -1,0 +1,12 @@
+---
+- name: Play 1 - Debug Message
+  hosts: localhost
+  tasks:
+    - name: Print debug message
+      debug:
+        msg: "This is Play 1 - Debug Message"
+- name: Play 2 - Ping Hosts
+  hosts: all
+  tasks:
+    - name: Ping the hosts
+      ping:
