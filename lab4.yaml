@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: true
+  vars_files:
+    - /home/student/vault.yaml
+  tasks:
+    - name: check file existt
+      ansible.builtin.stat:
+        path: index.html
+      register: index_stat
+    - name: Install httpd
+      ansible.builtin.dnf:
+        name: httpd
+        state: present
+    - name: Try to copy index.html if it exists
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: '0644'
+      when: index_stat.stat.exists
+
+

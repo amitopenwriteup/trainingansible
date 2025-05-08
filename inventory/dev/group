@@ -1,0 +1,6 @@
+[server]
+10.0.16.1
+10.0.16.2
+[server:vars]
+ansible_user=student
+ansible_sudo_pass=student
