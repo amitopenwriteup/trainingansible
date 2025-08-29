@@ -1,0 +1,78 @@
+
+---
+
+# Ansible Automation Labs 🚀
+
+This repository contains **Ansible playbooks, inventories, and supporting lab materials** to practice automation for infrastructure setup, configuration management, and application deployment.
+
+## 📂 Repository Structure
+
+```
+.
+├── inventory/              # Ansible inventory files
+│   └── dev/                # Environment-specific hosts
+├── files/                  # Supporting files for playbooks
+├── *.yaml                  # Ansible playbooks
+│   ├── lab.yaml            # Base lab playbook
+│   ├── lab1.yaml - lab4.yaml # Step-by-step lab exercises
+│   ├── installdocker.yaml  # Install and configure Docker
+│   ├── nodemonitor.yaml    # Node monitoring setup
+│   ├── osfamily.yaml       # OS family-specific tasks
+│   ├── packagetest.yaml    # Package installation test
+│   ├── vault.yaml          # Encrypted secrets example
+│   ├── website.yaml        # Simple web server deployment
+│   └── displayhealth.yaml  # Health check automation
+├── inventory.ini           # Static inventory
+├── inventory.yaml          # Dynamic inventory example
+├── index.html              # Sample web page
+├── Lab cleanup.docx        # Lab cleanup steps
+├── lab copyfiles.docx      # Lab copy files guide
+└── readme                  # Notes
+```
+
+## ⚙️ Requirements
+
+* **Ansible 2.10+**
+* Python 3.8+
+* Access to target nodes (Linux VMs / containers)
+
+## 🚀 Usage
+
+1. Clone the repo
+
+   ```bash
+   git clone https://github.com/amitopenwriteup/amitopenwriteup.git
+   cd amitopenwriteup
+   ```
+
+2. Run a playbook
+
+   ```bash
+   ansible-playbook -i inventory.ini lab1.yaml
+   ```
+
+3. Use Ansible Vault for secrets
+
+   ```bash
+   ansible-vault create vault.yaml
+   ansible-playbook -i inventory.ini website.yaml --ask-vault-pass
+   ```
+
+## 📘 Labs
+
+* **Lab 1–4** → Step-by-step automation exercises
+* **Docker Setup** → Install & configure Docker with Ansible
+* **Monitoring** → Node monitoring with `nodemonitor.yaml`
+* **Web Deployment** → Host a sample webpage (`index.html`)
+* **Vault** → Secure sensitive variables with Ansible Vault
+
+## 🏗️ Future Enhancements
+
+* Add CI/CD pipeline for playbook linting
+* Expand inventory for staging/production
+* Integrate Molecule for testing
+
+---
+
+👉 This README makes it **clear that this repo is Ansible labs + automation examples**.
+
